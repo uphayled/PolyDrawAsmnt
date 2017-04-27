@@ -19,11 +19,11 @@ class Line:Shape {
     }
     
     override func draw(_ theContext: CGContext) {
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.move(to: CGPoint(x:self.X, y:self.Y))
         path.addLine(to: CGPoint(x:self.deusex,y:self.deusy))
         path.close()
         path.stroke()
-            path.fill()
+        path.fill()
     }
 }

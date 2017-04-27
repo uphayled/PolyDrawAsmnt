@@ -10,18 +10,18 @@ import UIKit
 
 class OptionsController: UIViewController {
 
+   
+    @IBOutlet weak var lineWidth: UISlider!
+    @IBOutlet weak var lineColour: UISegmentedControl!
+    @IBOutlet weak var fillColour: UISegmentedControl!
+    @IBOutlet weak var sampleArea: UIView!
     
-    
-    
-    
-    
-    
-    
-    
+    var shape:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(shape)
+        //lineColour.selectedSegmentIndex = shape!.lineColour
         // Do any additional setup after loading the view.
     }
 
@@ -30,15 +30,31 @@ class OptionsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func FillEnable(_ sender: Any) {
     }
-    */
 
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func Save(_ sender: Any) {
+        print(Int(lineWidth.value))
+        print(Int(lineColour.selectedSegmentIndex))
+        print(Int(fillColour.selectedSegmentIndex))
+        //shape.lineWidth = Int(lineWidth.value)
+        //shape.lineColour = Int(lineColour.selectedSegmentIndex)
+        //shape.fillColour = Int(fillColour.selectedSegmentIndex)
+        dismiss(animated: false, completion: nil)
+        
+    }
+ 
+    @IBAction func widthChange(_ sender: Any) {
+    }
+    
+    @IBAction func lColourChange(_ sender: Any) {
+    }
+
+    @IBAction func fColourChange(_ sender: Any) {
+    }
 }

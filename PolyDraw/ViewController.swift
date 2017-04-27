@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var drawingView: DrawingView!
+    @IBOutlet weak var currentShape: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,16 @@ class ViewController: UIViewController {
             drawingView!.theShapes.removeLast()
             self.drawingView.setNeedsDisplay()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let theNext = segue.destination as! OptionsController
+        
+        theNext.shape = self.drawingView.shapeType
+        
+        
+        
+        
     }
 
 }

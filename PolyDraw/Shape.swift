@@ -8,16 +8,20 @@
 
 import UIKit
 
-class Shape {
+class Shape:Settings {
     var X:Double
     var Y:Double
     
     init(X:Double, Y:Double) {
         self.X = X
         self.Y = Y
+        super.init()
     }
     
+    
     func draw(_ theContext:CGContext){}
+    
+   
 }
 
 

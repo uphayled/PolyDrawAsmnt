@@ -16,6 +16,7 @@
 		17BFE59D1E68AC6100FAC187 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFE59C1E68AC6100FAC187 /* Rect.swift */; };
 		17BFE59F1E68AEAF00FAC187 /* Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFE59E1E68AEAF00FAC187 /* Oval.swift */; };
 		17BFE5A11E68AFBB00FAC187 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BFE5A01E68AFBB00FAC187 /* DrawingView.swift */; };
+		840174511EB1179E00AB459A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840174501EB1179E00AB459A /* Settings.swift */; };
 		CBBEDCF21EAA968E001204B0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEDCF11EAA968E001204B0 /* Line.swift */; };
 		CBBEDCF41EAAA07A001204B0 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEDCF31EAAA07A001204B0 /* OptionsController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		17BFE59C1E68AC6100FAC187 /* Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 		17BFE59E1E68AEAF00FAC187 /* Oval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oval.swift; sourceTree = "<group>"; };
 		17BFE5A01E68AFBB00FAC187 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		840174501EB1179E00AB459A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CBBEDCF11EAA968E001204B0 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		CBBEDCF31EAAA07A001204B0 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 			children = (
 				17BFE59A1E68AB3B00FAC187 /* Shape.swift */,
 				17BFE59C1E68AC6100FAC187 /* Rect.swift */,
+				840174501EB1179E00AB459A /* Settings.swift */,
 				17BFE59E1E68AEAF00FAC187 /* Oval.swift */,
 				CBBEDCF11EAA968E001204B0 /* Line.swift */,
 			);
@@ -176,6 +179,7 @@
 				17BFE59B1E68AB3B00FAC187 /* Shape.swift in Sources */,
 				17BFE5A11E68AFBB00FAC187 /* DrawingView.swift in Sources */,
 				17BFE5881E68AB0200FAC187 /* AppDelegate.swift in Sources */,
+				840174511EB1179E00AB459A /* Settings.swift in Sources */,
 				CBBEDCF21EAA968E001204B0 /* Line.swift in Sources */,
 				17BFE59D1E68AC6100FAC187 /* Rect.swift in Sources */,
 			);
