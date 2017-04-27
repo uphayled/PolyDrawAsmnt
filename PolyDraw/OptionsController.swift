@@ -20,7 +20,7 @@ class OptionsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(shape)
+        		
         //lineColour.selectedSegmentIndex = shape!.lineColour
         // Do any additional setup after loading the view.
     }
@@ -31,12 +31,16 @@ class OptionsController: UIViewController {
     }
     
     @IBAction func FillEnable(_ sender: Any) {
+        if fillColour.isEnabled {
+            fillColour.isEnabled = false
+        }else{
+            fillColour.isEnabled = true
+        }
     }
 
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
-    
     
     @IBAction func Save(_ sender: Any) {
         print(Int(lineWidth.value))
