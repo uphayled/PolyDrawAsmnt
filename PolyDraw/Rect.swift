@@ -12,6 +12,7 @@ class Rect:Shape {
     var theHeight:Double
     var theWidth:Double
     
+    
     init(X:Double, Y:Double, theHeight:Double, theWidth:Double) {
         self.theHeight = theHeight
         self.theWidth = theWidth
@@ -21,7 +22,7 @@ class Rect:Shape {
     
     override func draw(_ theContext: CGContext) {
         let rect = CGRect(x: self.X, y: self.Y, width: self.theWidth, height: self.theHeight)
-      
+        
         theContext.addRect(rect)
     }
 }

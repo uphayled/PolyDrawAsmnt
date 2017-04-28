@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var drawingView: DrawingView!
     @IBOutlet weak var currentShape: UIToolbar!
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,8 +41,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let theNext = segue.destination as! OptionsController
-        
-        theNext.shape = self.drawingView.shapeType
+        theNext.saveTo = self
         
         
         

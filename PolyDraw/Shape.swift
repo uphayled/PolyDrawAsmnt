@@ -8,14 +8,15 @@
 
 import UIKit
 
-class Shape:Settings {
+class Shape{
     var X:Double
     var Y:Double
+    var settings:Settings
     
-    init(X:Double, Y:Double) {
+    init(X:Double, Y:Double,theSettings:Settings = Settings()) {
         self.X = X
         self.Y = Y
-        super.init()
+        self.settings = theSettings
     }
     
     

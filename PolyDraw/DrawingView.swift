@@ -15,6 +15,7 @@ class DrawingView: UIView {
     var initialPoint: CGPoint!
     var isThereAPartialShape : Bool = false
     var thePartialShape : Shape!
+    var settings = [Settings(),Settings(),Settings()]
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -22,14 +23,18 @@ class DrawingView: UIView {
         let possibleContext = UIGraphicsGetCurrentContext()
         
         if let theContext = possibleContext {
-            theContext.setLineWidth(1.0)
+            theContext.setLineWidth(1)
             let colorSpace = CGColorSpaceCreateDeviceRGB()
-            let components:[CGFloat] = [0.0, 0.0, 1.0, 1.0]
+            let components:[CGFloat] = [0.0, 2.0, 1.0, 1.0]
             let color = CGColor(colorSpace: colorSpace, components: components)
             theContext.setStrokeColor(color!)
             
             for aShape in self.theShapes {
+                theContext.setLineWidth(aShape.settings.lineWidth)
+                theContext.setFillColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
+                theContext.setStrokeColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
                 aShape.draw(theContext)
+             
             }
             
             if self.isThereAPartialShape {

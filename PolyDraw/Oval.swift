@@ -10,7 +10,7 @@ import UIKit
 
 class Oval:Shape {
     var theHeight:Double
-    var theWidth:Double
+    var theWidth:Double    
     
     init(X:Double, Y:Double, theHeight:Double, theWidth:Double) {
         self.theHeight = theHeight
