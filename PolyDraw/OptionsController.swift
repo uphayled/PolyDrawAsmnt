@@ -14,12 +14,26 @@ class OptionsController: UIViewController {
     @IBOutlet weak var lineWidth: UISlider!
     @IBOutlet weak var lineColour: UISegmentedControl!
     @IBOutlet weak var fillColour: UISegmentedControl!
-    @IBOutlet weak var sampleArea: UIView!
+    @IBOutlet weak var sampleArea: DrawingView!
+    @IBOutlet weak var fillSwitch: UISwitch!
+    
+    var currentSettings:Settings = Settings()
     
     var saveTo:ViewController!
     
     override func viewDidLoad() {
-        super.viewDidLoad()        //lineColour.selectedSegmentIndex = shape!.lineColour
+        super.viewDidLoad()
+        let tempSettings = saveTo.drawingView.settings[saveTo.drawingView.shapeType]
+        lineColour.selectedSegmentIndex = Int(tempSettings.lineColour)
+        lineWidth.value = Float(tempSettings.lineWidth)
+        
+        if !tempSettings.filled{
+            fillColour.isEnabled = false
+            fillSwitch.isOn = false
+        }
+        fillColour.selectedSegmentIndex = Int(tempSettings.fillColour)
+        
+        print(tempSettings.filled)
         // Do any additional setup after loading the view.
     }
 
@@ -29,10 +43,10 @@ class OptionsController: UIViewController {
     }
     
     @IBAction func FillEnable(_ sender: Any) {
-        if fillColour.isEnabled {
-            fillColour.isEnabled = false
-        }else{
+        if fillSwitch.isOn {
             fillColour.isEnabled = true
+        }else{
+            fillColour.isEnabled = false
         }
     }
 
@@ -41,23 +55,29 @@ class OptionsController: UIViewController {
     }
     
     @IBAction func Save(_ sender: Any) {
-        print(Int(lineWidth.value))
-        print(Int(lineColour.selectedSegmentIndex))
-        print(Int(fillColour.selectedSegmentIndex))
-        //shape.lineWidth = Int(lineWidth.value)
-        //shape.lineColour = Int(lineColour.selectedSegmentIndex)
-        //shape.fillColour = Int(fillColour.selectedSegmentIndex)
+        
+        let temp = Settings(linewidth: CGFloat(lineWidth.value),linecolour: CGFloat(lineColour.selectedSegmentIndex),fillEd: fillSwitch.isOn,  fillcolour: CGFloat(fillColour.selectedSegmentIndex))
+        saveTo.drawingView.settings[saveTo.drawingView.shapeType] = temp
+        print(temp.filled)
         dismiss(animated: false, completion: nil)
         
     }
  
+    func getSettings(){
+        currentSettings = Settings(linewidth: CGFloat(lineWidth.value),linecolour: CGFloat(lineColour.selectedSegmentIndex),fillEd: fillSwitch.isOn,  fillcolour: CGFloat(fillColour.selectedSegmentIndex))
+        
+    }
+    
     @IBAction func widthChange(_ sender: Any) {
+        getSettings()
     }
     
     @IBAction func lColourChange(_ sender: Any) {
+        getSettings()
     }
 
     @IBAction func fColourChange(_ sender: Any) {
+        getSettings()
     }
     
     

@@ -31,9 +31,11 @@ class DrawingView: UIView {
             theContext.setStrokeColor(color!)
             
             for aShape in self.theShapes {
-                theContext.setLineWidth(aShape.settings.lineWidth)
-                theContext.setFillColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
-                theContext.setStrokeColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
+                //theContext.setLineWidth(aShape.settings.lineWidth)
+                //theContext.setFillColor(aShape.settings.defineColourfromindex(index: Int(aShape.settings.fillColour)))
+                //theContext.setStrokeColor(aShape.settings.defineColourfromindex(index: Int(aShape.settings.lineColour)))
+                //theContext.setFillColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
+                //theContext.setStrokeColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
                 aShape.draw(theContext)
              
             }
