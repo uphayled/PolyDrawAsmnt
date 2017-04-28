@@ -22,7 +22,7 @@ class Rect:Shape {
     
     override func draw(_ theContext: CGContext) {
         let rect = CGRect(x: self.X, y: self.Y, width: self.theWidth, height: self.theHeight)
-        
+
         theContext.addRect(rect)
     }
 }

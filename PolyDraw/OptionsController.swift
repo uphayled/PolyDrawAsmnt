@@ -19,10 +19,7 @@ class OptionsController: UIViewController {
     var saveTo:ViewController!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        //lineColour.selectedSegmentIndex = shape!.lineColour
+        super.viewDidLoad()        //lineColour.selectedSegmentIndex = shape!.lineColour
         // Do any additional setup after loading the view.
     }
 
