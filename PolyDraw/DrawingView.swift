@@ -31,7 +31,8 @@ class DrawingView: UIView {
             theContext.setStrokeColor(color!)
             
             for aShape in self.theShapes {
-                //theContext.setLineWidth(aShape.settings.lineWidth)
+                print(aShape.settings.lineWidth)
+                theContext.setLineWidth(aShape.settings.lineWidth)
                 //theContext.setFillColor(aShape.settings.defineColourfromindex(index: Int(aShape.settings.fillColour)))
                 //theContext.setStrokeColor(aShape.settings.defineColourfromindex(index: Int(aShape.settings.lineColour)))
                 //theContext.setFillColor(CGColor(red: 1,green: 1,blue: 1,alpha: 0))
@@ -69,30 +70,36 @@ class DrawingView: UIView {
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
                                             theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
+                self.thePartialShape.setSettings(s: settings[shapeType])
                 break;
             case 1:
                 self.thePartialShape = Oval(X: Double(topLeftPoint.x),
                                             Y: Double(topLeftPoint.y),
                                             theHeight: abs(Double(self.initialPoint.y-newPoint.y)),
                                             theWidth: abs(Double(self.initialPoint.x-newPoint.x)))
+                self.thePartialShape.setSettings(s: settings[shapeType])
                 break;
             case 2:
                 self.thePartialShape = Line(X: Double(initialPoint.x),
                                             Y: Double(initialPoint.y),
                                             newX: Double(newPoint.x),
                                             newY: Double(newPoint.y))
+                self.thePartialShape.setSettings(s: settings[shapeType])
                 break;
             default:
                 print("bad")
                 break;
             }
+            
         }
         self.setNeedsDisplay()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let theShape = self.thePartialShape {
+            theShape.setSettings(s: settings[shapeType])
             self.theShapes.append(theShape)
+            
         }
         self.isThereAPartialShape = false
     }

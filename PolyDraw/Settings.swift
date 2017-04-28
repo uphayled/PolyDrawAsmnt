@@ -15,7 +15,7 @@ class Settings {
     var fillColour:CGFloat
    
     
-    init (linewidth:CGFloat = 0,linecolour:CGFloat = 0,fillEd:Bool = true,fillcolour:CGFloat = 0) {
+    init (linewidth:CGFloat = 1,linecolour:CGFloat = 0,fillEd:Bool = true,fillcolour:CGFloat = 0) {
         self.lineWidth = linewidth
         self.lineColour = linecolour
         self.filled = fillEd
@@ -46,5 +46,6 @@ class Settings {
         let color = CGColor(colorSpace: colorSpace, components: components)
         return color!
     }
+    
     
 }

@@ -18,8 +18,9 @@ class Shape{
         self.Y = Y
         self.settings = theSettings
     }
-    
-    
+    func setSettings(s:Settings){
+        self.settings = s
+    }
     func draw(_ theContext:CGContext){}
     
    
