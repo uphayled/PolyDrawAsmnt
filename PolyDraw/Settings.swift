@@ -22,6 +22,13 @@ class Settings {
         self.fillColour = fillcolour
     }
     
+    init (S:Settings){
+        self.lineWidth = S.lineWidth
+        self.lineColour = S.lineColour
+        self.filled = S.filled
+        self.fillColour = S.fillColour
+
+    }
     
     func defineColourfromindex(index:Int) -> CGColor{
         let colorSpace = CGColorSpaceCreateDeviceRGB()
